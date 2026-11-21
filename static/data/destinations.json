@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "name": "Hingol National Park",
+        "region": "Lasbela",
+        "category": "Nature",
+        "interests": [
+            "nature",
+            "adventure",
+            "wildlife"
+        ],
+        "description": "Hingol National Park is known for its dramatic rock formations, mountains, natural landscapes and coastal scenery.",
+        "roman_description": "Hingol National Park apni khoobsurat chattanon, paharon, qudrati manazir aur sahili khubsurti ke liye mashhoor hai.",
+        "image": "/static/images/hingol.jpg",
+        "note": "Check local access, weather and travel guidance before visiting."
+    },
+    {
+        "id": 2,
+        "name": "Kund Malir Beach",
+        "region": "Lasbela",
+        "category": "Beach",
+        "interests": [
+            "beach",
+            "nature",
+            "relaxation"
+        ],
+        "description": "Kund Malir is a scenic beach located along the Makran Coastal Highway in Balochistan.",
+        "roman_description": "Kund Malir Balochistan ka ek khoobsurat sahili maqam hai. Yeh Makran Coastal Highway ke qareeb waqay hai.",
+        "image": "/static/images/kund-malir.jpg",
+        "note": "Check sea conditions and local travel advisories."
+    },
+    {
+        "id": 3,
+        "name": "Ziarat",
+        "region": "Ziarat",
+        "category": "Mountains & History",
+        "interests": [
+            "mountains",
+            "history",
+            "nature"
+        ],
+        "description": "Ziarat is a hill station famous for its ancient juniper forests and the historic Quaid-e-Azam Residency.",
+        "roman_description": "Ziarat Balochistan ka mashhoor pahari maqam hai. Yeh apne purane juniper ke darakhton aur tareekhi Quaid-e-Azam Residency ki wajah se mashhoor hai.",
+        "image": "/static/images/ziarat.jpg",
+        "note": "Check seasonal weather and road conditions."
+    },
+    {
+        "id": 4,
+        "name": "Hanna Lake",
+        "region": "Quetta",
+        "category": "Lake & Nature",
+        "interests": [
+            "nature",
+            "relaxation"
+        ],
+        "description": "Hanna Lake is a well-known lake and recreational destination near Quetta.",
+        "roman_description": "Hanna Lake Quetta ke qareeb ek mashhoor jheel aur tafreehi maqam hai. Yahan qudrati manazir dekhe ja sakte hain.",
+        "image": "/static/images/hanna-lake.jpg",
+        "note": "Confirm current lake conditions and facilities locally."
+    },
+    {
+        "id": 5,
+        "name": "Gwadar",
+        "region": "Gwadar",
+        "category": "Coastal",
+        "interests": [
+            "beach",
+            "nature",
+            "culture"
+        ],
+        "description": "Gwadar is a coastal city in Balochistan known for its beaches, viewpoints and maritime scenery.",
+        "roman_description": "Gwadar Balochistan ka ek sahili shehar hai. Yeh apne samandari manazir, sahilon aur viewpoints ke liye jana jata hai.",
+        "image": "/static/images/gwadar.jpg",
+        "note": "Check current travel advisories and local access information."
+    },
+    {
+        "id": 6,
+        "name": "Moola Chotok",
+        "region": "Khuzdar",
+        "category": "Waterfalls & Nature",
+        "interests": [
+            "nature",
+            "adventure",
+            "waterfalls",
+            "mountains"
+        ],
+        "description": "Moola Chotok is a natural ravine in Khuzdar District, Balochistan. It is known for waterfalls, rocky cliffs, streams and natural pools. The route includes rough off-road sections.",
+        "roman_description": "Moola Chotok Khuzdar, Balochistan mein waqay ek khoobsurat qudrati wadi hai. Yeh waterfalls, buland chattanon, pani ke chashmon aur qudrati pools ke liye mashhoor hai. Yahan pohanchne ka rasta mushkil ho sakta hai.",
+        "image": "/static/images/moola-chotok.jpg",
+        "note": "Confirm local access, weather, road conditions and transport arrangements with experienced local guides."
+    }
+]

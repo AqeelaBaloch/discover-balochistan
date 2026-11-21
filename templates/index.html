@@ -1,0 +1,143 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123c35">
+  <title>Discover Balochistan | Smart Tourism</title>
+  <link rel="manifest" href="/static/manifest.json">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#">
+    <span class="brand-mark">DB</span>
+    <span data-en="Discover Balochistan" data-ur="Balochistan Daryaft Karein">Discover Balochistan</span>
+  </a>
+  <nav>
+    <a href="#destinations" data-en="Destinations" data-ur="Maqamat">Destinations</a>
+    <a href="#assistant" data-en="AI Assistant" data-ur="AI Madadgar">AI Assistant</a>
+    <a href="#planner" data-en="Trip Planner" data-ur="Safar ka Mansuba">Trip Planner</a>
+  </nav>
+  <button id="languageBtn" class="language-btn" type="button">Roman Urdu</button>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow" data-en="EXPLORE • DISCOVER • EXPERIENCE" data-ur="Ghoomein • Daryaft Karein • Lutf Uthayein">EXPLORE • DISCOVER • EXPERIENCE</p>
+      <h1 data-en="Discover the beauty of Balochistan." data-ur="Balochistan ki khubsurti daryaft karein.">Discover the beauty of Balochistan.</h1>
+      <p class="hero-copy" data-en="Explore remarkable places, learn about local heritage and plan your journey with a smart tourism assistant." data-ur="Khoobsurat maqamat explore karein, maqami saqafat ke bare mein janein aur tourism madadgar ke sath apne safar ka mansuba banayein.">Explore remarkable places, learn about local heritage and plan your journey with a smart tourism assistant.</p>
+      <a class="primary-btn" href="#destinations" data-en="Explore destinations" data-ur="Tourist maqamat dekhein">Explore destinations</a>
+    </div>
+    <div class="hero-art">
+      <div class="hero-stamp">PAKISTAN<br><strong>BALOCHISTAN</strong></div>
+    </div>
+  </section>
+
+  <section class="section" id="destinations">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow" data-en="DISCOVER THE REGION" data-ur="Is khittay ko daryaft karein">DISCOVER THE REGION</p>
+        <h2 data-en="Popular destinations" data-ur="Mashhoor tourist maqamat">Popular destinations</h2>
+      </div>
+      <span class="muted" data-en="Explore places across Balochistan" data-ur="Balochistan ke mukhtalif maqamat explore karein">Explore places across Balochistan</span>
+    </div>
+
+    <div class="destination-grid">
+      {% for place in destinations %}
+      <article class="destination-card">
+        <img src="{{ place.image }}" alt="{{ place.name }}" loading="lazy">
+        <div class="card-body">
+          <span class="category"
+                data-en="{{ place.category }}"
+                data-ur="{% if place.category == 'Nature' %}Qudrat{% elif place.category == 'Beach' %}Samandar ka Sahil{% elif place.category == 'Mountains & History' %}Pahaar aur Tareekh{% elif place.category == 'Lake & Nature' %}Jheel aur Qudrat{% elif place.category == 'Coastal' %}Sahili Ilaqa{% elif place.category == 'Waterfalls & Nature' %}Aabshar aur Qudrat{% else %}{{ place.category }}{% endif %}">
+            {{ place.category }}
+          </span>
+          <h3>{{ place.name }}</h3>
+          <p data-en="{{ place.description }}" data-ur="{{ place.roman_description }}">{{ place.description }}</p>
+          <small data-en="{{ place.region }}"
+                 data-ur="{% if place.region == 'Lasbela' %}Lasbela{% elif place.region == 'Ziarat' %}Ziarat{% elif place.region == 'Quetta' %}Quetta{% elif place.region == 'Gwadar' %}Gwadar{% elif place.region == 'Khuzdar' %}Khuzdar{% else %}{{ place.region }}{% endif %}">
+            {{ place.region }}
+          </small>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section feature-grid">
+    <div class="feature-panel" id="assistant">
+      <p class="eyebrow" data-en="SMART TOURISM" data-ur="Jadeed Tourism">SMART TOURISM</p>
+      <h2 data-en="Ask the AI Tourism Assistant" data-ur="AI Tourism Madadgar se poochein">Ask the AI Tourism Assistant</h2>
+      <p class="muted" data-en="Ask about tourist destinations and receive helpful information in English or Roman Urdu." data-ur="Tourist maqamat ke bare mein sawal karein aur English ya Roman Urdu mein maloomat hasil karein.">Ask about tourist destinations and receive helpful information in English or Roman Urdu.</p>
+
+      <div class="chat-window" id="chatWindow">
+        <div class="bot-message" data-en="Hello! Ask me about Ziarat, Hingol, Kund Malir, Hanna Lake, Gwadar or Moola Chotok." data-ur="Assalam-o-Alaikum! Ziarat, Hingol, Kund Malir, Hanna Lake, Gwadar ya Moola Chotok ke bare mein poochein.">
+          Hello! Ask me about Ziarat, Hingol, Kund Malir, Hanna Lake, Gwadar or Moola Chotok.
+        </div>
+      </div>
+
+      <form id="chatForm" class="chat-form">
+        <input id="chatInput" data-en-placeholder="Ask a tourism question..." data-ur-placeholder="Tourism ke bare mein sawal poochein..." placeholder="Ask a tourism question..." required>
+        <button class="primary-btn" type="submit" data-en="Send" data-ur="Bhejein">Send</button>
+      </form>
+      <small class="muted" data-en="English: Local AI model | Roman Urdu: Tourism knowledge base" data-ur="English: Local AI model | Roman Urdu: Tourism maloomat ka database">English: Local AI model | Roman Urdu: Tourism knowledge base</small>
+    </div>
+
+    <div class="feature-panel" id="planner">
+      <p class="eyebrow" data-en="PLAN YOUR JOURNEY" data-ur="Apne safar ka mansuba banayein">PLAN YOUR JOURNEY</p>
+      <h2 data-en="Smart Trip Planner" data-ur="Aasaan Safar Planner">Smart Trip Planner</h2>
+      <form id="plannerForm" class="planner-form">
+        <label for="destinationSelect" data-en="Choose destination" data-ur="Tourist maqam select karein">Choose destination</label>
+        <select id="destinationSelect">
+          {% for place in destinations %}
+          <option value="{{ place.name }}">{{ place.name }}</option>
+          {% endfor %}
+        </select>
+        <label for="daysSelect" data-en="Number of days" data-ur="Din ki tadaad">Number of days</label>
+        <select id="daysSelect">
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <button class="primary-btn" type="submit" data-en="Generate itinerary" data-ur="Safar ka mansuba banayein">Generate itinerary</button>
+      </form>
+      <div id="itineraryResult" class="result-box muted" data-en="Your suggested itinerary will appear here." data-ur="Aap ka tajweez shuda safar ka mansuba yahan nazar aaye ga.">Your suggested itinerary will appear here.</div>
+    </div>
+  </section>
+
+  <section class="section recommend-section">
+    <p class="eyebrow" data-en="PERSONALIZED DISCOVERY" data-ur="Aap ki pasand ke mutabiq maqamat">PERSONALIZED DISCOVERY</p>
+    <h2 data-en="What do you love exploring?" data-ur="Aap ko kis qisam ke maqamat pasand hain?">What do you love exploring?</h2>
+    <div class="interest-list">
+      <label><input type="checkbox" value="nature"><span data-en="Nature" data-ur="Qudrat">Nature</span></label>
+      <label><input type="checkbox" value="history"><span data-en="History" data-ur="Tareekh">History</span></label>
+      <label><input type="checkbox" value="beach"><span data-en="Beaches" data-ur="Samandar ke sahil">Beaches</span></label>
+      <label><input type="checkbox" value="mountains"><span data-en="Mountains" data-ur="Pahaar">Mountains</span></label>
+      <label><input type="checkbox" value="adventure"><span data-en="Adventure" data-ur="Musaafirana sargarmiyan">Adventure</span></label>
+      <label><input type="checkbox" value="waterfalls"><span data-en="Waterfalls" data-ur="Aabshar">Waterfalls</span></label>
+    </div>
+
+    <button id="recommendBtn" class="primary-btn"
+            data-en="Recommend places"
+            data-ur="Maqamat Tajweez Karein">
+      Recommend places
+    </button>
+    <div id="recommendResult" class="recommend-result"></div>
+  </section>
+</main>
+
+<footer>
+  <b data-en="Discover Balochistan" data-ur="Balochistan Daryaft Karein">Discover Balochistan</b>
+  <span data-en="Explore More. Discover Balochistan." data-ur="Balochistan Ki Khoobsurati Daryaft Karein.">
+    Explore More. Discover Balochistan.
+  </span>
+</footer>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
